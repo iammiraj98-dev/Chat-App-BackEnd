@@ -2,7 +2,7 @@ import os from 'os';
 import cluster from "cluster";
 const startServer = async (app) =>{
   if(cluster.isPrimary){
-    for(let i=0;i<os.cpus().length;i++){
+    for(let i=0;i<1;i++){
       cluster.fork();
     }
     cluster.on('exit',(worker,code,signal) =>{
