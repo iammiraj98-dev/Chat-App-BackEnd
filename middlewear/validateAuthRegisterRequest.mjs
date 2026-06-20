@@ -10,7 +10,7 @@ const helper = {
   },
 };
 
-const validateRequest = (req,res,next) =>{
+const validateAuthRegisterRequest = (req,res,next) => {
   const { body = {} } = req;
   let {Email="",Name="",Password=""} = body;
   if(!Email || !Name || !Password){
@@ -30,4 +30,4 @@ const validateRequest = (req,res,next) =>{
   next();
 
 };
-export default validateRequest;
+export default validateAuthRegisterRequest;
