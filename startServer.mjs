@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 const startServer = async (app) =>{
   dotenv.config();
-  const cpuCount = os.cpus().length;
+  // const cpuCount = os.cpus().length;
+  const cpuCount = 1;
   if(cluster.isPrimary){
     for(let i=0;i<cpuCount;i++){
       cluster.fork();
